@@ -6,6 +6,7 @@ import contact from "../images/boy.svg";
 import "../components/assets/contact.css";
 import Footer from "./Footer";
 
+
 export default function Contact() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -25,39 +26,79 @@ export default function Contact() {
     setUser({ ...user, [name]: value });
   };
 
+  // const PostData = async (e) => {
+  //   e.preventDefault();
+
+  //   const { name, email, skill, ig_username, linkdin, twitter, github, password, cpassword } = user;
+
+  //   try {
+  //     const res = await axios.post("http://localhost:5000/register", {
+  //       name,
+  //       email,
+  //       skill,
+  //       ig_username,
+  //       twitter,
+  //       linkdin,
+  //       github,
+  //       password,
+  //       cpassword,
+  //     });
+
+  //     if (res.status === 201) {
+  //       window.alert("Registration successful");
+  //       console.log("Registration successful");
+  //       navigate("/thankyou");
+  //     }
+  //   } catch (error) {
+  //     if (error.response && error.response.status === 422) {
+  //       window.alert("Invalid Registration");
+  //       console.log("Invalid Registration");
+  //     } else {
+  //       window.alert("Something went wrong");
+  //       console.log("Something went wrong", error);
+  //     }
+  //   }
+  // };
+
+
   const PostData = async (e) => {
     e.preventDefault();
-
     const { name, email, skill, ig_username, linkdin, twitter, github, password, cpassword } = user;
 
     try {
-      const res = await axios.post("http://localhost:5000/register", {
-        name,
-        email,
-        skill,
-        ig_username,
-        twitter,
-        linkdin,
-        github,
-        password,
-        cpassword,
-      });
+      const res = await axios.post(
+        "https://delecampus.vercel.app/contact",
+        {
+          name,
+                email,
+                skill,
+                ig_username,
+                twitter,
+                linkdin,
+                github,
+                password,
+                cpassword,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      if (res.status === 201) {
+      if (res.status === 200) {
         window.alert("Registration successful");
         console.log("Registration successful");
-        navigate("/thankyou");
+        // navigate("/thankyou");
+      } else {
+        console.log("Failed to register");
       }
     } catch (error) {
-      if (error.response && error.response.status === 422) {
-        window.alert("Invalid Registration");
-        console.log("Invalid Registration");
-      } else {
-        window.alert("Something went wrong");
-        console.log("Something went wrong", error);
-      }
+      console.error("Error during signup:", error);
     }
   };
+
+
 
   return (
     <>
