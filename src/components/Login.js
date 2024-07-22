@@ -36,11 +36,11 @@ export default function Login() {
       );
 
       if (res.status === 200) {
-        // Store the token in local storage
+      
         localStorage.setItem('token', res.data.token);
         window.alert("Login successful");
         console.log("Login successful");
-        navigate("/"); // Redirect to the dashboard or any protected route
+        navigate("/"); 
       } else {
         console.log("Failed to login");
       }

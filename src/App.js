@@ -6,7 +6,7 @@ import React  from 'react';
 import Navbar2 from './components/Navbar2';
 import Home from './components/Home';
 
-// import Footer from './components/Footer';
+
 import Skill from './components/Skill';
 import Contact from './components/Contact';
 
@@ -22,7 +22,7 @@ import Batch2125 from './components/batches/Batch2125';
 import View from './components/View';
 import Batch2024 from './components/batches/Batch2024';
 import Batch1923 from './components/batches/Batch1923';
-// import Thankyou from './components/Thankyou';
+
 import Login from './components/Login';
 
 
