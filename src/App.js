@@ -23,6 +23,7 @@ import View from './components/View';
 import Batch2024 from './components/batches/Batch2024';
 import Batch1923 from './components/batches/Batch1923';
 // import Thankyou from './components/Thankyou';
+import Login from './components/Login';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/view" element={<View/>} />
             <Route path="/register" element={<Contact/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/notes" element={<Notes/>} />
             <Route path="/view/batch2125" element={<Batch2125/>} />
             <Route path="/view/batch2024" element={<Batch2024/>} />
