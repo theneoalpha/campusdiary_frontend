@@ -31,7 +31,7 @@ export default function Contact() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/register",
+        "https://delecampus.vercel.app/register",
         {
           name,
           email,
