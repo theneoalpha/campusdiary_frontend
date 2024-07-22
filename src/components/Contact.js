@@ -31,14 +31,14 @@ export default function Contact() {
 
     try {
       const res = await axios.post(
-        "https://delecampus.vercel.app/register",
+        "http://localhost:5000/register",
         {
           name,
           email,
           skill,
           ig_username,
-          twitter,
           linkdin,
+          twitter,
           github,
           password,
           cpassword,
@@ -50,7 +50,7 @@ export default function Contact() {
         }
       );
 
-      if (res.status === 201 || res.status === 200) {
+      if (res.status === 201) {
         window.alert("Registration successful");
         console.log("Registration successful");
         navigate("/login");
@@ -58,15 +58,11 @@ export default function Contact() {
         console.log("Failed to register");
       }
     } catch (error) {
-      if (error.response && error.response.status === 422) {
-        window.alert("Invalid Registration");
-        console.log("Invalid Registration");
-      } else {
-        window.alert("Something went wrong");
-        console.log("Something went wrong", error);
-      }
+      console.error("Error during signup:", error);
+      window.alert(error.response.data.message || "Something went wrong");
     }
   };
+
 
   return (
     <>
