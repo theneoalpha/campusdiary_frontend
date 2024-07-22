@@ -1,0 +1,44 @@
+.profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile div {
+    margin-bottom: 10px;
+  }
+  
+  .profile label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .profile p, .profile input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .profile button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .profile button:hover {
+    background-color: #45a049;
+  }
+  

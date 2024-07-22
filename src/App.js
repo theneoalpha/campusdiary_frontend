@@ -24,6 +24,7 @@ import Batch2024 from './components/batches/Batch2024';
 import Batch1923 from './components/batches/Batch1923';
 
 import Login from './components/Login';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/view/batch2024" element={<Batch2024/>} />
             <Route path="/view/batch1923" element={<Batch1923/>} />
             <Route path="/view/batch1923" element={<Batch1923/>} />
+            <Route path="/profile" component={<Profile/>} />
            
           </Routes>
         </BrowserRouter>
