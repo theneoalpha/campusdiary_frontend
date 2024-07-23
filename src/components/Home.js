@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <>
-        <Navbar/>
-    
+   
+    <Navbar/>
 
         <section className="hero-banner text-center">
         <div className="container">
@@ -22,7 +22,7 @@ export default function Home() {
       </section>
 
 
-      <Footer/>
+   <Footer/>
     </>
   );
 }

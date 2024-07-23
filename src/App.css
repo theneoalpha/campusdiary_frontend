@@ -1,3 +1,11 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-gradient-custom {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-900;
+}
 .App {
   text-align: center;
 }

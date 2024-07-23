@@ -24,23 +24,17 @@ export default function Login() {
     try {
       const res = await axios.post(
         "https://delecampus.vercel.app/login",
-        {
-          email,
-          password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        { email, password },
+        { headers: { "Content-Type": "application/json" } }
       );
 
       if (res.status === 200) {
-      
         localStorage.setItem('token', res.data.token);
         window.alert("Login successful");
         console.log("Login successful");
-        navigate("/"); 
+        const redirectTo = localStorage.getItem('redirectAfterLogin') || '/profile';
+        localStorage.removeItem('redirectAfterLogin'); // Clear the redirect route
+        navigate(redirectTo);
       } else {
         console.log("Failed to login");
       }
@@ -60,7 +54,7 @@ export default function Login() {
       <Navbar />
       <section className="contact">
         <div className="container mt-5">
-          <h1>Login</h1>
+          <h1 className="text-center">Login</h1>
           <div className="contact-content">
             <div className="contact-form">
               <form method="POST" className="contactpage-form" onSubmit={PostData}>
@@ -70,7 +64,7 @@ export default function Login() {
                     type="text"
                     name="email"
                     id="email"
-                    placeholder="Email Address   *"
+                    placeholder="Email Address *"
                     value={user.email}
                     onChange={handleInputs}
                   />
@@ -81,7 +75,7 @@ export default function Login() {
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="Password   *"
+                    placeholder="Password *"
                     value={user.password}
                     onChange={handleInputs}
                   />
@@ -95,7 +89,7 @@ export default function Login() {
                   />
                 </div>
                 <div>
-                  <h6>" * " Fields are mandatory</h6>
+                  <h6 className="mb-6">" * " Fields are mandatory</h6>
                 </div>
               </form>
             </div>

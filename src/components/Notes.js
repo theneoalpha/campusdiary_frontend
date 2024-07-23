@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import axios from "axios";
+import { useNavigate} from "react-router-dom";
 import IT from"./img/IT.jpg";
 import "../components/assets/notes.css";
 import Mechanical from"./img/Mechanical.jpg";
@@ -10,6 +12,28 @@ import ET from"./img/ET.jpg";
 import Maths from"./img/Maths.png";
 
 export default function Notes() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (!token) return; // User not logged in, no need to fetch profile data
+
+        const res = await axios.get("https://delecampus.vercel.app/profile", {
+          headers: { Authorization: token },
+        });
+      
+      } catch (error) {
+        console.error("Error fetching profile data:", error);
+        if (error.response && error.response.status === 403) {
+          // Handle unauthorized access, e.g., navigate to login
+          navigate("/login");
+        }
+      }
+    };
+    fetchData();
+  }, [navigate]);
+
   return (
     <>
     <Navbar/>

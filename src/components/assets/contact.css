@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* *{
     margin: 0;
@@ -5,10 +18,13 @@
     box-sizing: border-box;
 } */
 
-  @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
 input{
     background-color: transparent;
     
+}
+*{
+  color: white;
 }
 ::placeholder { 
     color: rgb(253, 253, 253);
@@ -98,4 +114,119 @@ body{
         
         flex-direction: column;
     }
+}
+input {
+  background-color: transparent;
+}
+
+::placeholder { 
+  color: rgb(253, 253, 253);
+  opacity: 1; /* Firefox */
+}
+
+body {
+  background: linear-gradient(90deg, #1595b9 0%, #0e1e7a 100%);
+}
+
+.header_area {
+  background: linear-gradient(90deg, #1595b9 0%, #0e1e7a 100%);
+}
+
+.contact, .profile {
+  width: 80%;
+  display: block;
+  margin: 4rem auto;
+  border-radius: 3rem;  
+  box-shadow: 0 20px 25px -5px rgba(0 0 0 / .10),
+              0 10px 10px -5px rgba(0 0 0 / .04);
+}
+
+.container h1 {
+  color: #d8d8d8a8;
+  font-family: 'Teko', sans-serif;
+}
+
+.form-title {
+  color: purple;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.form-group input {
+  border-radius: 4px;
+  border-style: none;
+  margin: 1rem;
+}
+
+.submit {
+  background-color: rgb(173, 80, 173);
+  width: 6rem;
+  margin: auto;
+  box-shadow: 0 40px 35px -5px rgba(0 0 0 / .10),
+              0 10px 10px -5px rgba(0 0 0 / .04);
+}
+
+.contact-form {
+  display: grid;
+  place-items: center;
+  width: 50%;
+}
+
+.contact-content, .profile-content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.profile-content img {
+
+  margin: 1rem;
+}
+
+.mt-5 {
+  margin-top: 12rem!important;
+}
+
+.contactpage-form {
+  top: 0px;
+  position: relative;
+}
+
+.first, .second, .third {
+  display: flex;
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowwise {
+  display: flex;
+  margin-right: 4rem;
+  flex-direction: row;
+  color:black;
+}
+
+.profile-group {
+  display: flex;
+  margin-right: 3rem;
+  justify-content: center;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-content, .profile-content {
+    flex-direction: column;
+  }
+
+  .contact-content img, .profile-content img {
+    width: 50%;
+    margin: none;
+  }
+
+  .first, .second, .third {
+    flex-direction: column;
+  }
 }

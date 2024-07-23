@@ -5,8 +5,9 @@ import Navbar from "./Navbar";
 import contact from "../images/boy.svg";
 import "../components/assets/contact.css";
 import Footer from "./Footer";
+import {Link} from "react-router-dom";
 
-export default function Contact() {
+export default function Register() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -69,7 +70,8 @@ export default function Contact() {
       <Navbar />
       <section className="contact">
         <div className="container mt-5">
-          <h1>Enroll Now</h1>
+          <h1 className="text-center">Enroll Now</h1>
+          <h6 className="mb-4 text-center ">Already have an account? <Link className="font-medium text-black-600 underline dark:text-black-500 hover:no-underline text-center" to="/login">Signin</Link></h6>
           <div className="contact-content">
             <img src={contact} alt="contact" />
             <div className="contact-form">
@@ -191,11 +193,13 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <h6>* Batch is in the numeric form only eg. 2020-24</h6>
-                  <h6>* If you don't have any social media account simply leave it blank.</h6>
-                  <h6>" * " Fields are mandatory</h6>
+                  <p>* Batch is in the numeric form only eg. 2020-24</p>
+                  <p>* If you don't have any social media account simply leave it blank.</p>
+                  <p>" * " Fields are mandatory</p>
+                  
                 </div>
               </form>
+              
             </div>
           </div>
         </div>

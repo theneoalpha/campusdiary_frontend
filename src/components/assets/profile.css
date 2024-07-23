@@ -1,44 +1,101 @@
+/* General Reset (optional) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+/* Profile Page Styles */
+body {
+  background: linear-gradient(90deg, #1595b9 0%, #0e1e7a 100%);
+}
+
 .profile {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 80%;
+  display: block;
+  margin: 4rem auto;
+  border-radius: 3rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.10),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  background: #fff; /* White background for profile card */
+}
+
+.profile h1 {
+  color: #d8d8d8a8;
+  font-family: 'Teko', sans-serif;
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 1rem auto;
+}
+
+.profile label {
+  display: block;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.profile .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.profile input[type="text"],
+.profile input[type="password"],
+.profile input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+.profile .form-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.profile button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: rgb(173, 80, 173);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile button:hover {
+  background-color: #d15b96;
+}
+
+.profile .logout-button {
+  background-color: #dc3545;
+}
+
+.profile .logout-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .profile {
+    width: 90%;
+    padding: 1rem;
   }
-  
-  .profile h1 {
-    text-align: center;
-    margin-bottom: 20px;
+
+  .profile img {
+    width: 120px;
+    height: 120px;
   }
-  
-  .profile div {
-    margin-bottom: 10px;
-  }
-  
-  .profile label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .profile p, .profile input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  .profile button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .profile button:hover {
-    background-color: #45a049;
-  }
-  
+}
